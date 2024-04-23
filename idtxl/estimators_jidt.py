@@ -58,8 +58,9 @@ class JidtEstimator(Estimator):
         """Start JAVA virtual machine if it is not running."""
         jar_location = resource_filename(__name__, 'infodynamics.jar')
         if not jp.isJVMStarted():
-            jp.startJVM(jp.getDefaultJVMPath(), '-ea', ('-Djava.class.path=' +
+            jp.startJVM(jp.getDefaultJVMPath(), '-ea -Xmx4g', ('-Djava.class.path=' +
                                                         jar_location))
+            # Set maximum heap size to 4GB
 
     def _set_te_defaults(self, settings):
         """Set defaults for transfer entropy estimation."""
