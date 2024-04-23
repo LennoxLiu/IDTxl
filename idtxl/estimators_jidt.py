@@ -59,7 +59,7 @@ class JidtEstimator(Estimator):
         jar_location = resource_filename(__name__, 'infodynamics.jar')
         if not jp.isJVMStarted():
             jp.startJVM(jp.getDefaultJVMPath(), '-ea', ('-Djava.class.path=' +
-                                                        jar_location), '-Xmx4g')
+                                                        jar_location), '-Xmx12g')
             # Set maximum heap size to 4GB
 
     def _set_te_defaults(self, settings):
